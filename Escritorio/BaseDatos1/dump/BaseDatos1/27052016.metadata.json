@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":1,"key":{"_id":1},"name":"_id_","ns":"BaseDatos1.27052016"},{"v":1,"key":{"location":"2dsphere"},"name":"location_2dsphere","ns":"BaseDatos1.27052016","background":true,"2dsphereIndexVersion":3}]}

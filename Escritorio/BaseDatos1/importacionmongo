@@ -1,0 +1,1 @@
+mongoimport -d BaseDatos1 -c cities1 --drop --stopOnError --type csv --file csv.txt  --ignoreBlanks --headerline

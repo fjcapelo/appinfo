@@ -1,0 +1,104 @@
+<!doctype html>
+<!-- Declares meanMapApp as the starting Angular module -->
+<html class="no-js" ng-app="meanMapApp">
+<head>
+    <meta charset="utf-8">
+    <title>Scotch MEAN Map</title>
+    <meta name="description" content="An example demonstrating Google Map integration with MEAN Apps">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- CSS -->
+    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css"/>
+    <link rel="stylesheet" href="style.css"/>
+
+    <link rel="stylesheet" type="text/css" href="ngDatepicker.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+       <!-- Holder JS -->
+    <script src="../bower_components/holderjs/holder.js"></script>
+    <!-- Google Maps API -->
+    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyD-xXzKG9mxaejO5x1ex5TJyr59m1qDzmk&sensor=false&libraries=places"></script>
+    <!-- Modernizr -->
+    <script src="../bower_components/modernizr/bin/modernizr"></script>
+    <!-- JS Source -->
+    <script src="../bower_components/jquery/src/jquery.js"></script>
+    <script src="../bower_components/angular/angular.js"></script>
+    <script src="../bower_components/angular-route/angular-route.js"></script>
+    <script src="../bower_components/angularjs-geolocation/dist/angularjs-geolocation.min.js"></script>
+    <script src="js/angular.min.js"></script>
+     <script src="js/lodash.min.js"></script>
+     <script src="js/angular-google-maps.min.js"></script>
+   <!-- Angular Scripts -->
+    <script src="js/app.js"></script>
+    <script src="js/gservice.js"></script>
+    <script src="js/addCtrl.js"></script>
+
+    <script type="text/javascript" src="js/ngDatepicker.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.3/moment-with-locales.min.js"></script>
+
+
+</head>
+<body ng-controller="addCtrl">
+
+<div class="container">
+    <div class="header">
+        <ul class="nav nav-pills pull-right">
+            <li active><a href="">Join the Team</a></li>
+            <li disabled><a href="">Find Teammates</a></li>
+        </ul>
+        <h3 class="text-muted">Mapa de rayos</h3>
+    </div>
+    <!-- Map and Side Panel -->
+    <div class="row content">
+        <!-- Google Map -->
+        <div class="col-md-7">
+            <div id="map" style = "width:550px; height:550px"></div>
+        </div>
+        <!-- Side Panel -->
+        <div class="col-md-5">
+            <div class="panel panel-default">
+                <!-- Panel Title -->
+                <div class="panel-heading">
+                    <h2 class="panel-title text-center">Join the Scotch Team! <span class="glyphicon glyphicon-map-marker"></span></h2>
+                </div>
+                <!-- Panel Body -->
+                <div class="panel-body">
+                    <!-- Creates Form (novalidate disables HTML validation, Angular will control) -->
+                    <form name ="addForm" novalidate>
+                        <!-- Text Boxes and Other User Inputs. Note ng-model binds the values to Angular $scope -->
+                        <div class="form-group">
+                            <label for="direccion">Dirección riesgo <span class="badge">All fields required</span></label>
+                            <input autocomplete="off" type="text" class="form-control"  id="direccion"  ng-model="usuario" required>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="latitude">Latitude</label>
+                            <input type="text" class="form-control" id="latitude" value="" ng-model="formData.latitude" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="longitude">Longitude</label>
+                            <input type="text" class="form-control" id="longitude" value="" ng-model="formData.longitude" readonly>
+                        </div>
+
+                       <div class="form-group">
+                        <h4>Fecha de siniestro</h4>
+                             <ng-datepicker type="text" ng-model="formData.fecha" id="fecha" format="DD.MM.YYYY" view-format="DD.MM.YYYY">
+                              </ng-datepicker>
+                            </div>
+
+                        <!-- Submit button. Note that its tied to createUser() function from addCtrl. Also note ng-disabled logic which prevents early submits.  -->
+                            <button type="submit" class="btn btn-danger btn-block" ng-click="createUser()" ng-disabled="addForm.$invalid">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr/>
+    <!-- Footer -->
+    <div class="footer">
+        <p class="text-center"><span class="glyphicon glyphicon-check"></span> Created by Ahmed Haque for Scotch IO -
+            <a href="https://scotch.io/">App Tutorial</a> | <a href="https://github.com/afhaque/MeanMapAppV2.0">Github Repo</a></p>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,11 @@
+gawk -F',' 'NR>1{ \
+    gsub(/, +/,",",$0);\
+    printf("{time:%d,dia:\"21313\",location:[%f,%s],alt:\"%s\",pol:\"%f\",mds:\"%f\",mcg:\"%f\"}\n" \
+    ,$1,$3,$2,$4,$5,$6,$7,$8)}'   01092015.txt | mongoimport -d "BaseDatos1" -c "geodb5" 
+
+dia:\"01092015\",
+
+gawk -F',' 'NR>1{ \
+    gsub(/, +/,",",$0);\
+    printf("{time:%d,dia:21313,location:[%f,%s],alt:%s,pol:%f,mds:%f,mcg:%f}\n" \
+    ,$1,$3,$2,$4,$5,$6,$7,$8)}'   01092015b.txt | mongoimport -d "BaseDatos1" -c "geodb22"
