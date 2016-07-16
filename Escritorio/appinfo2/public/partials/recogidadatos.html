@@ -128,18 +128,202 @@
 
   </div>
 
+  <div class="form-group">
+                <label for="nombre">Nombre</label>
+                <input autocomplete="off" type="text"  id="origen"  ng-model="formData.nombre" >
+            </div>
+
   </div>
 
     <div class="row">
     <label></label>
     </div>
 
+    <div class="row">
+
+                          <div class="form-group">
+                              <label for="hora">Hora siniestro</label>
+                              <input type="time" name="hora" value="11:45:00" max="22:30:00" min="10:00:00" step="1" ng-model="formData.hora">
+                          </div>
+
+                          <div class="form-group" ng-controller="circunstancias2">
+                          <label for="circunstancias2">Tipo de riesgo</label>
+                          <select name="circunstancias2" id="circunstancias2" ng-model="formData.circunstancias2" class="form-control">
+                            <option ng-repeat="option in data.availableOptions" value="{{option.id}}">{{option.name}}</option>
+                          </select>
+
+                        </div>
+
+                        <div class="form-group" ng-controller="pieza">
+                        <label for="pieza">Pieza</label>
+                        <select name="pieza" id="pieza" ng-model="formData.pieza" class="form-control">
+                          <option ng-repeat="option in data.availableOptions" value="{{option.id}}">{{option.name}}</option>
+                        </select>
+
+                        </div>
+
+                        <div class="form-group" ng-controller="circunstancias3">
+                        <label for="circunstancias3">Avisaron</label>
+                        <select name="circunstancias3" id="circunstancias3" ng-model="formData.circunstancias3" class="form-control">
+                          <option ng-repeat="option in data.availableOptions" value="{{option.id}}">{{option.name}}</option>
+                        </select>
+                      </div>
 
 
+</div>
+<div class="row">
+<label></label>
+</div>
+
+<div class="row">
+
+  <div class="form-group" ng-controller="circunstancias4">
+  <label for="circunstancias4">Mas datos</label>
+  <select name="circunstancias4" id="circunstancias4" ng-model="formData.circunstancias4" class="form-control">
+    <option ng-repeat="option in data.availableOptions" value="{{option.id}}">{{option.name}}</option>
+  </select>
+</div>
+
+                      <div class="form-group" ng-controller="circunstancias5">
+                      <label for="circunstancias5">Comprobación</label>
+                      <select name="circunstancias5" id="circunstancias5" ng-model="formData.circunstancias5" class="form-control">
+                        <option ng-repeat="option in data.availableOptions" value="{{option.id}}">{{option.name}}</option>
+                      </select>
+
+                    </div>
 
 
+</div>
+<div class="row">
+<label></label>
+</div>
+<div class="row">
 
 
+                      <div class="form-group" ng-controller="utilidad">
+                      <label for="utilidad">Utilidad</label>
+                      <select name="utilidad" id="utilidad" ng-model="formData.utilidad" class="form-control">
+                        <option ng-repeat="option in data.availableOptions" value="{{option.id}}">{{option.name}}</option>
+                      </select>
+
+                    </div>
+
+                    <div class="form-group" ng-controller="protecciones">
+                    <label for="protecciones">Protecciones</label>
+                    <select name="protecciones" id="protecciones" ng-model="formData.protecciones" class="form-control">
+                      <option ng-repeat="option in data.availableOptions" value="{{option.id}}">{{option.name}}</option>
+                    </select>
+
+                    </div>
+
+                    <div class="form-group" ng-controller="construccion">
+                    <label for="construccion">Tipo de construcción</label>
+                    <select name="construccion" id="construccion" ng-model="formData.construccion" class="form-control">
+                      <option ng-repeat="option in data.availableOptions" value="{{option.id}}">{{option.name}}</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                  <label for="antiguedad">Antiguedad </label>
+                  <input autocomplete="off" name=antiguedad class="form-control"  id="antiguedad"  ng-model="formData.antiguedad"  type="text"  >
+                  </div>
+
+</div>
+<div class="row">
+<label></label>
+</div>
+
+<div class="row">
+
+
+                      <div class="form-group" ng-controller="estado">
+                      <label for="estado">Estado de la construcción</label>
+                      <select name="estado" id="estado" ng-model="formData.estado" class="form-control">
+                        <option ng-repeat="option in data.availableOptions" value="{{option.id}}">{{option.name}}</option>
+                      </select>
+
+                    </div>
+
+                    <div class="form-group">
+                                  <label for="superficie">Superficie</label>
+                                  <input autocomplete="off" name=superficie class="form-control"  id="superficie"  ng-model="formData.superficie"  type="number"  >
+                              </div>
+                              <div class="form-group">
+                                  <label for="recomendaciones">Recomendaciones</label>
+                                  <input autocomplete="off" name=recomendaciones class="form-control"  id="recomendaciones"  ng-model="formData.recomendaciones"  type="text"  >
+                              </div>
+
+
+</div>
+<div class="row">
+<label></label>
+</div>
+
+<div class="row">
+
+
+                      <div class="form-group" ng-controller="garantia1">
+                      <label for="garantia1">Garantia</label>
+                      <select name="garantia1" id="garantia1" ng-model="formData.garantia1" class="form-control">
+                        <option ng-repeat="option in data.availableOptions" value="{{option.id}}">{{option.name}}</option>
+                      </select>
+
+                    </div>
+
+                    <div class="form-group">
+                    <label for="capitalPreexistencia">Capital Asegurado</label>
+                      <input name="capitalAsegurado" ng-model="formData.capitalAsegurado" id="capìtalAsegurado" type = "text">
+
+                    </input>
+
+                    </div>
+
+                      <div class="form-group">
+                      <label for="capitalPreexistencia">Capital Preexistencia</label>
+                      <input name="capitalPreexitencia" ng-model="formData.capitalPreexistencia" id="capitalPreexistencia" type = "text">
+
+                    </input>
+
+
+</div>
+</div>
+
+<div class="row">
+<label></label>
+</div>
+<div class="row">
+
+
+                      <div class="form-group" ng-controller="garantia2">
+                      <label for="garantia2">Garantia</label>
+                      <select name="garantia2" id="garantia2" ng-model="formData.garantia2" class="form-control">
+                        <option ng-repeat="option in data.availableOptions" value="{{option.id}}">{{option.name}}</option>
+                      </select>
+
+                    </div>
+
+                    <div class="form-group">
+                    <label for="capitalAsegurado2">Capital Asegurado</label>
+                    <input name="capitalAsegurado2" ng-model="formData.capitalAsegurado2" id="capìtalAsegurado2" type = "text">
+                    </input>
+
+                    </div>
+                   <div class="form-group">
+                <label for="valorm2">Valor m2</label>
+                <input name="valorm2" ng-model="formData.valorm2" id="valorm2" type = "number">
+
+                                                           </input>
+                                                         </div>
+
+
+                                                         </div>
+
+
+</div>
+</div>
+
+<div class="row">
+<label></label>
+</div>
 
 
                 <!-- Submit button. Note that its tied to createUser() function from addCtrl. Also note ng-disabled logic which prevents early submits.  -->
