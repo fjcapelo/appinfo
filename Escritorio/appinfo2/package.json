@@ -1,0 +1,26 @@
+{
+    "name": "Avances",
+    "main": "server.js",
+    "scripts":{
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": "6.2.2",
+    "npm": "3.9.5"
+  },
+
+
+    "dependencies" : {
+        "express"    : "~4.7.2",
+        "morgan"     : "~1.2.2",
+        "body-parser": "~1.5.2",
+        "jsonwebtoken": "^5.0.2",
+        "method-override": "~2.1.2",
+        "angular": "1.5.x",
+    "angular-mocks": "1.5.x",
+    "angular-route": "1.5.x",
+    "bootstrap": "3.3.x"
+
+
+    }
+}

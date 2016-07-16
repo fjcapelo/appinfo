@@ -1,0 +1,150 @@
+<!-- addForm.html -->
+
+<!-- "Join Team" (Post) Form -->
+
+<div class="col-xs-12">
+
+    <!-- Creates Main Panel -->
+    <div class="panel panel-default">
+
+        <!-- Panel Title -->
+        <div class="panel-heading">
+            <h2 class="panel-title text-center">Avances <span class="glyphicon glyphicon-map-marker"></span></h2>
+        </div>
+
+        <!-- Panel Body -->
+        <div class="panel-body">
+
+            <!-- Creates Form (novalidate disables HTML validation, Angular will control) -->
+            <form name ="addForm" class = "form-inline" role = "form">
+                <!-- Text Boxes and Other User Inputs. Note ng-model binds the values to Angular $scope -->
+
+  <!-- *********************************************************************************************** -->
+              <div class="row">
+
+
+
+<div ng-controller="companias" class="form-group">
+  <label for="cia"> Compañias: </label>
+    <select name="cia" id="cia" ng-model="formData.cia" class="form-control">
+      <option ng-repeat="option in data.availableOptions"  value="{{option.id}}">{{option.name}}</option>
+    </select>
+</div>
+
+  <div class="form-group">
+      <label for="causadeclarada">Causa Declarada</label>
+      <input autocomplete="off" type="text" class="form-control"  id="causadeclarada"  ng-model="formData.causadeclarada" >
+  </div>
+</div>
+
+  <div class="row">
+    <label></label>
+    </div>
+
+    <div class="row">
+
+      <div class="form-group">
+          <label for="fechaencargo">Fecha encargo</label>
+         <ng-datepicker type="text" id="fechaencargo"  format="DD.MM.YYYY" view-format="DD.MM.YYYY"  ng-model="formData.fechaencargo" > </ng-datepicker>
+
+
+      </div>
+      <div class="form-group">
+          <label for="fechacontacto">Fecha contacto</label>
+         <ng-datepicker type="text"   id="fechacontacto"  format="DD.MM.YYYY" view-format="DD.MM.YYYY"  ng-model="formData.fechacontacto" > </ng-datepicker>
+
+      </div>
+      <div class="form-group">
+          <label for="fechavisita">Fecha visita</label>
+           <ng-datepicker  type="text"   id="fechavisita"  format="DD.MM.YYYY" view-format="DD.MM.YYYY"  ng-model="formData.fechavisita" > <ng-datepicker>
+
+      </div>
+
+      <div class="form-group">
+          <label for="horavisita">Hora visita</label>
+      <input type="time" name="hora" value="11:45" max="22:30" min="10:00" ng-model="formData.horavisita" step="1"></input>
+
+      </div>
+
+</div>
+
+<div class="row">
+  <label></label>
+  </div>
+
+  <div class="row">
+
+      <div class="form-group" ng-controller="asegur">
+      <label for="asegur">Asegurado/Asegurada</label>
+      <select name="asegur" id="asegur" ng-model="formData.asegur" class="form-control">
+        <option ng-repeat="option in data.availableOptions" value="{{option.id}}">{{option.name}}</option>
+      </select>
+
+    </div>
+
+    <div class="form-group">
+        <label for="danos">DAÑOS</label>
+        <input autocomplete="off" type="text" class="form-control"  id="daños"  ng-model="formData.danos" required>
+
+    </div>
+    <div class="form-group">
+        <label for="causa">CAUSA</label>
+        <input autocomplete="off" type="text" class="form-control"  id="causa"  ng-model="formData.causa" required>
+
+  </div>
+
+  <div class="form-group">
+      <label for="origen">ORIGEN</label>
+      <input autocomplete="off" type="text" class="form-control"  id="origen"  ng-model="formData.origen" required>
+
+  </div>
+
+
+  <div class="row">
+    <label></label>
+    </div>
+
+    <div class="row">
+
+        <div class="form-group" ng-controller="vivienda">
+        <label for="vivienda">Tipo de riesgo</label>
+        <select name="vivienda" id="vivienda" ng-model="formData.vivienda" class="form-control">
+          <option ng-repeat="option in data.availableOptions" value="{{option.id}}">{{option.name}}</option>
+        </select>
+
+      </div>
+      <div class="form-group" ng-controller="ubicacion">
+      <label for="ubicacion">Ubicación</label>
+      <select name="ubicacion" id="vivienda" ng-model="formData.ubicacion" class="form-control">
+        <option ng-repeat="option in data.availableOptions" value="{{option.id}}">{{option.name}}</option>
+      </select>
+
+    </div>
+    <div class="form-group" ng-controller="don">
+    <label for="don">Don/Dña</label>
+    <select name="don" id="don" ng-model="formData.don" class="form-control">
+      <option ng-repeat="option in data.availableOptions" value="{{option.id}}">{{option.name}}</option>
+    </select>
+
+  </div>
+
+  </div>
+
+    <div class="row">
+    <label></label>
+    </div>
+
+
+
+
+
+
+
+
+
+                <!-- Submit button. Note that its tied to createUser() function from addCtrl. Also note ng-disabled logic which prevents early submits.  -->
+                    <button type="submit" class="btn btn-danger btn-block" ng-click= "createUser()" ng-disabled="addForm.$invalid" >Consultar</button>
+            </form>
+        </div>
+    </div>
+</div>

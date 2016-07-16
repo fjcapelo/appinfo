@@ -1,0 +1,182 @@
+<!-- addForm.html -->
+
+<!-- "Join Team" (Post) Form -->
+
+<div class="col-xs-12">
+
+    <!-- Creates Main Panel -->
+    <div class="panel panel-default">
+
+        <!-- Panel Title -->
+        <div class="panel-heading">
+            <h2 class="panel-title text-center">Avances <span class="glyphicon glyphicon-map-marker"></span></h2>
+        </div>
+
+        <!-- Panel Body -->
+        <div class="panel-body">
+
+            <!-- Creates Form (novalidate disables HTML validation, Angular will control) -->
+            <form name ="addForm" class = "form-inline" role = "form">
+                <!-- Text Boxes and Other User Inputs. Note ng-model binds the values to Angular $scope -->
+                <div class="form-group">
+                    <label for="danos">DAÑOS</label>
+                    <input autocomplete="off" type="text" class="form-control"  id="daños"  ng-model="formData.danos" required>
+
+                </div>
+                <div class="form-group">
+                    <label for="causa">CAUSA</label>
+                    <input autocomplete="off" type="text" class="form-control"  id="causa"  ng-model="formData.causa" required>
+
+              </div>
+
+              <div class="form-group">
+                  <label for="origen">ORIGEN</label>
+                  <input autocomplete="off" type="text" class="form-control"  id="origen"  ng-model="formData.origen" required>
+
+              </div>
+
+
+              <div class="row">
+                <label></label>
+                </div>
+  <!-- *********************************************************************************************** -->
+              <div class="row">
+
+                <div class="form-group">
+                <label for="vivienda">Tipo de riesgo</label>
+                <select name="vivienda" ng-model="formData.vivienda" id="vivienda" type = "text">
+                <option value="piso">Piso</option>
+                <option value="adosada">Adosada</option>
+                <option value="chalet">Chalet</option>
+                <option value="local comercial">Local comercial</option>
+                <option value="nave industrial">Nave industrial</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+                <label for="zona">Ubicación</label>
+              <select name="zona" ng-model="formData.zona" id="zona" type = "text">
+                <option value="urbana">Urbana</option>
+                <option value="rural">Rural</option>
+                <option value="extra-radio">Extra-radio</option>
+                <option value="nucleo industrial">Nucleo industrial</option>
+              </select>
+              </div>
+
+
+
+                <div class="form-group">
+                      <label for="don">D/Dña</label>
+              <select name="don" ng-model="formData.don" id="don" type = "text">
+                <option value="Don">Don</option>
+                <option value="Doña">Doña</option>
+              </select>
+            </div>
+
+
+              <div class="form-group">
+                  <label for="nombre">Nombre</label>
+                  <input autocomplete="off" type="text"  id="origen"  ng-model="formData.nombre" required>
+              </div>
+
+                </div>
+
+                <div class="row">
+                  <label></label>
+                  </div>
+<!-- *********************************************************************************************** -->
+                        <div class="row">
+
+                          <div class="form-group">
+                              <label for="hora">Hora siniestro</label>
+                              <input autocomplete="off" type="text"  class="form-control"  id="hora"  ng-model="formData.hora" required>
+                          </div>
+
+                       <div class="form-group">
+                  <label for="circunstancias">Suceso</label>
+                  <select name="circunstancias2" ng-model="formData.circunstancias2" id="circunstancias2" type = "text">
+                    <option value="Que en fecha de siniestro hubo un corte en el suministro eléctrico sobre las {{formData.hora}}, que afecto al {{formData.danos}}." >Corte de suministro</option>
+                    <option value="Que en fecha de siniestro, y sin motivo aparente, dejo de funcionar el {{formData.danos}}.">Sin motivo aparente</option>
+                    <option value="Que en fecha de siniestro, fueron a utilizar el {{formData.danos}}, y observaron que no se ponía en marcha.">No se pone en marcha</option>
+                    <option value="Que posterior a varios cortes de suministro eléctrico sobre las {{formData.hora}} , dejó de funcionar el {{formData.danos}} "></option>
+                    <option value=""></option>
+                  </select>
+                </div>
+
+
+                  <div class="form-group">
+                    <label for="pieza">Pieza</label>
+
+                    <select name="pieza" ng-model="formData.pieza" id="pieza" type = "text">
+                     <option value="el motor eléctrico del compresor">Motor compresor</option>
+                     <option value="el bobinado del motor">Bobinado del motor</option>
+                     <option value="la fuente de alimentación">Fuente de alimentación</option>
+                     <option value="la placa de control">Placa de control</option>
+                    </select>
+                  </div>
+
+
+                      <div class="form-group">
+                    <label for="circunstancias">Avisaron</label>
+
+                     <select name="circunstancias3" ng-model="formData.circunstancias3" id="circunstancias3" type = "text">
+                      <option value="Avisaron a un servicio técnico particularmente, el cual se desplazó al riesgo y tras comprobar el {{formData.danos}}, localizó daños en {{formData.pieza}}." >Avisaron a un servicio</option>
+                      <option value="Indica que hay más afectados en la zona.">Mas afectados</option>
+                      <option value="No ha avisado al servicio técnico, por que estaba a la espera de valoración por parte de su compañía aseguradora.">No avisa a servicio</option>
+                      <option value=""></option>
+                      <option value=""></option>
+                    </select>
+                     </div>
+                </div>
+
+                <div class="row">
+                  <label></label>
+                  </div>
+
+  <div class="row">
+                  <div class="form-group">
+                <label for="circunstancias">Mas datos</label>
+
+                 <select name="circunstancias4" ng-model="formData.circunstancias4" id="circunstancias4" type = "text">
+                  <option value="Se han desecho del aparato afectado." >Se han desecho</option>
+                  <option value="El aparato se lo ha llevado el servicio técnico">El servicio se lleva</option>
+                  <option value="No ha avisado al servicio técnico, por que estaba a la espera de valoración por parte de su compañía aseguradora."></option>
+                  <option value=""></option>
+                  <option value=""></option>
+                </select>
+                 </div>
+
+
+                                <div class="form-group">
+                               <label for="circunstancias">Comprobación</label>
+                                <select name="circunstancias5" ng-model="formData.circunstancias5" id="circunstancias5" type = "text">
+                                 <option value="Intento poner en funcionamiento el aparato, comprobando que no se pone en funcionamiento. " >No funciona</option>
+                                 <option value="El Asegurado muestra la pieza sustituida. Compruebo que sufre daños de origen eléctrico en su etapa primaria.">Muestra pieza</option>
+                                 <option value=""></option>
+                                 <option value=""></option>
+                                 <option value=""></option>
+                               </select>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label for="reserva">Reserva</label>
+                                    <input autocomplete="off" name=reserva class="form-control"  id="reserva"  ng-model="formData.reserva"  type="text"  required>
+                                </div>
+
+
+             </div>
+
+              <div class="row">
+                <label></label>
+                </div>
+
+
+
+
+                <!-- Submit button. Note that its tied to createUser() function from addCtrl. Also note ng-disabled logic which prevents early submits.  -->
+                    <button type="submit" class="btn btn-danger btn-block" ng-click= "createUser()" ng-disabled="addForm.$invalid" >Consultar</button>
+            </form>
+        </div>
+    </div>
+</div>
